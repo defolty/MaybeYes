@@ -9,8 +9,7 @@ import UIKit
 
 class StartViewController: UIViewController {
      
-    
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +30,7 @@ class StartViewController: UIViewController {
         goToChangeGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         goToChangeGame.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
+        Haptics.impact(.medium)
         present(goToChangeGame, animated: true)
     }
 }

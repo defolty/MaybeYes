@@ -72,20 +72,19 @@ class Game: UIViewController {
     
     @IBOutlet var outletBackButton: UIButton!
      
-    var losted = 0
-    
-    var quizBrain = QuizBrain()
-    
-    var touch: Bool?
-      
-    //=============================================================
     private var panGesture: UIPanGestureRecognizer!
     private var animator: UIDynamicAnimator!
     private var snapping: UISnapBehavior!
     private var continuousPush: UIPushBehavior!
     private var instantaneousPush: UIPushBehavior!
-    //=============================================================
-     
+    
+    var losted = 0
+    
+    var touch: Bool?
+    
+    var quizBrain = QuizBrain()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -244,12 +243,12 @@ class Game: UIViewController {
             resultVC.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
              
             present(resultVC, animated: true)
-             
+            
         } else if quizBrain.getScore() < quizBrain.getLostScore() && quizBrain.score + quizBrain.lostScore == quizBrain.quiz.count {
             mainView.isHidden = true
-             
+            
             self.showAlertAction(withTitle: NSLocalizedString("Конец игры!", comment: ""),
-                           withMessage: NSLocalizedString("Победила команда quizLostScore", comment: ""))
+                                 withMessage: NSLocalizedString("Победила команда quizLostScore", comment: ""))
         } else {
             print("the game is not over yet")
         }
@@ -265,8 +264,7 @@ class Game: UIViewController {
         case true:
             print("this is up")
             
-            let generator = UINotificationFeedbackGenerator() //2 строки error haptic
-            generator.notificationOccurred(.success)
+            Haptics.impact(.success)
             
             upLabel.text = ""
             downLabel.text = ""
@@ -297,8 +295,7 @@ class Game: UIViewController {
         case false:
             print("this is down")
             
-            let generator = UINotificationFeedbackGenerator() //2 строки error haptic
-            generator.notificationOccurred(.error)
+            Haptics.impact(.error)
             
             upLabel.text = ""
             downLabel.text = ""
@@ -333,7 +330,6 @@ class Game: UIViewController {
     
     
     @IBAction func backButton(_ sender: UIButton) {
-      
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let goToChangeGame = storyboard.instantiateViewController(withIdentifier: "ChangeGameID") as! ChangeGame
         
@@ -341,6 +337,7 @@ class Game: UIViewController {
         goToChangeGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         goToChangeGame.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
+        Haptics.impact(.light)
         present(goToChangeGame, animated: true)
     }
     

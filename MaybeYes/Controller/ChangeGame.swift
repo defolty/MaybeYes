@@ -32,29 +32,53 @@ class Menu {
     func setup() {
         
         let firstCategory = Category(name: "CategoryFirst",
-                                     image: UIImage(named: "firstCategory")!, forLabel: "Любое", numForCatagories: 1)
+                                     image: UIImage(named: "firstCategory")!,
+                                     forLabel: "Любое",
+                                     numForCatagories: 1)
         let secondCategory = Category(name: "CategorySecond",
-                                      image: UIImage(named: "secondCategory")!, forLabel: "Новогоднее", numForCatagories: 2)
+                                      image: UIImage(named: "secondCategory")!,
+                                      forLabel: "Новогоднее",
+                                      numForCatagories: 2)
         let thirdCategory = Category(name: "CategoryThird",
-                                     image: UIImage(named: "thirdCategory")!, forLabel: "Животные", numForCatagories: 3)
+                                     image: UIImage(named: "thirdCategory")!,
+                                     forLabel: "Животные",
+                                     numForCatagories: 3)
         let fourthCategory = Category(name: "CategoryFourth",
-                                      image: UIImage(named: "fourthCategory")!, forLabel: "Предметы", numForCatagories: 4)
+                                      image: UIImage(named: "fourthCategory")!,
+                                      forLabel: "Предметы",
+                                      numForCatagories: 4)
         let fivesCategory = Category(name: "CategoryFives",
-                                     image: UIImage(named: "fivesCategory")!, forLabel: "Игры", numForCatagories: 5)
+                                     image: UIImage(named: "fivesCategory")!,
+                                     forLabel: "Игры",
+                                     numForCatagories: 5)
         let sixCategory = Category(name: "CategorySix",
-                                   image: UIImage(named: "sixCategory")!, forLabel: "Технологии", numForCatagories: 6)
+                                   image: UIImage(named: "sixCategory")!,
+                                   forLabel: "Технологии",
+                                   numForCatagories: 6)
         let sevensCategory = Category(name: "CategorySeven",
-                                      image: UIImage(named: "sevensCategory")!, forLabel: "Наука", numForCatagories: 7)
+                                      image: UIImage(named: "sevensCategory")!,
+                                      forLabel: "Наука",
+                                      numForCatagories: 7)
         let eightsCategory = Category(name: "CategoryEight",
-                                      image: UIImage(named: "eightCategory")!, forLabel: "Страны", numForCatagories: 8)
+                                      image: UIImage(named: "eightCategory")!,
+                                      forLabel: "Страны",
+                                      numForCatagories: 8)
         let ninesCategory = Category(name: "CategoryNine",
-                                     image: UIImage(named: "ninesCategory")!, forLabel: "Еда", numForCatagories: 9)
+                                     image: UIImage(named: "ninesCategory")!,
+                                     forLabel: "Еда",
+                                     numForCatagories: 9)
         let tensCategory = Category(name: "CategoryTen",
-                                    image: UIImage(named: "tensCategory")!, forLabel: "Слова", numForCatagories: 10)
+                                    image: UIImage(named: "tensCategory")!,
+                                    forLabel: "Слова",
+                                    numForCatagories: 10)
         let elevensCategory = Category(name: "CategoryEleven",
-                                       image: UIImage(named: "elevensCategory")!, forLabel: "Напитки", numForCatagories: 11)
+                                       image: UIImage(named: "elevensCategory")!,
+                                       forLabel: "Напитки",
+                                       numForCatagories: 11)
         let twelvesCategory = Category(name: "CategoryTwelve",
-                                       image: UIImage(named: "twelveCategory")!, forLabel: "Вещи", numForCatagories: 12)
+                                       image: UIImage(named: "twelveCategory")!,
+                                       forLabel: "Вещи",
+                                       numForCatagories: 12)
         
         self.categories = [
             firstCategory, secondCategory, thirdCategory,
@@ -99,6 +123,7 @@ class ChangeGame: UIViewController {
         goToStart.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         goToStart.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         
+        Haptics.impact(.light)
         present(goToStart, animated: true)
     }
 }
@@ -121,29 +146,28 @@ extension ChangeGame: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         return cell
     }
      
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
         return CGSize(width: UIScreen.main.bounds.width, height: 120)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.row <= menu.categories.count {
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let goToGame = storyboard.instantiateViewController(withIdentifier: "GameID") as! Game
             
-            /// строка для перехода на следующие экран без модального вида
+            // строка для перехода на следующие экран без модального вида
             goToGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
             goToGame.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
             
+            Haptics.impact(.medium)
             present(goToGame, animated: true)
-            
         } else {
             print("sometimes we cry...")
         }

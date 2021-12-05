@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7096DD275D2B8B00BCC30F /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7096DC275D2B8B00BCC30F /* Haptic.swift */; };
 		FB8CDB2226DB84FE00CB3435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CDB2126DB84FE00CB3435 /* AppDelegate.swift */; };
 		FB8CDB2426DB84FE00CB3435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CDB2326DB84FE00CB3435 /* SceneDelegate.swift */; };
 		FB8CDB2626DB84FE00CB3435 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CDB2526DB84FE00CB3435 /* Game.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB7096DC275D2B8B00BCC30F /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		FB8CDB1E26DB84FE00CB3435 /* MaybeYes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaybeYes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8CDB2126DB84FE00CB3435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8CDB2326DB84FE00CB3435 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB7096DB275D22B600BCC30F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBE1021726F4E1F40028ABA5 /* StartViewController.swift */,
+				FBE1021926F4E20D0028ABA5 /* ChangeGame.swift */,
+				FB8CDB2526DB84FE00CB3435 /* Game.swift */,
+				FBF9A4EB26FF790F00CAC3C3 /* Result.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB7096DE275D2BB100BCC30F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FB7096DC275D2B8B00BCC30F /* Haptic.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		FB8CDB1526DB84FE00CB3435 = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +91,11 @@
 			children = (
 				FBE1021B26F4E8390028ABA5 /* GameMenuCell */,
 				FBE1021526F4D96C0028ABA5 /* Model */,
-				FBE1021726F4E1F40028ABA5 /* StartViewController.swift */,
-				FBE1021926F4E20D0028ABA5 /* ChangeGame.swift */,
-				FB8CDB2526DB84FE00CB3435 /* Game.swift */,
-				FBF9A4EB26FF790F00CAC3C3 /* Result.swift */,
+				FB7096DB275D22B600BCC30F /* Controller */,
 				FB8CDB2726DB84FE00CB3435 /* Main.storyboard */,
-				FB8CDB2A26DB84FE00CB3435 /* Assets.xcassets */,
+				FB7096DE275D2BB100BCC30F /* Support */,
 				FB8CDB2C26DB84FE00CB3435 /* LaunchScreen.storyboard */,
+				FB8CDB2A26DB84FE00CB3435 /* Assets.xcassets */,
 				FBE1021626F4D9800028ABA5 /* System */,
 				FB8CDB2F26DB84FE00CB3435 /* Info.plist */,
 			);
@@ -183,6 +202,7 @@
 				FBE1021826F4E1F40028ABA5 /* StartViewController.swift in Sources */,
 				FB8CDB2626DB84FE00CB3435 /* Game.swift in Sources */,
 				FBE1021A26F4E20D0028ABA5 /* ChangeGame.swift in Sources */,
+				FB7096DD275D2B8B00BCC30F /* Haptic.swift in Sources */,
 				FBE1022226F4E8810028ABA5 /* CollectionViewCell.swift in Sources */,
 				FB8CDB2226DB84FE00CB3435 /* AppDelegate.swift in Sources */,
 				FB8CDB2426DB84FE00CB3435 /* SceneDelegate.swift in Sources */,

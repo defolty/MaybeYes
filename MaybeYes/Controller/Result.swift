@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-
+ 
 
 class Result: UIViewController {
      
@@ -42,6 +41,7 @@ class Result: UIViewController {
         goToChangeGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         goToChangeGame.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
+        Haptics.impact(.light)
         present(goToChangeGame, animated: true)
     }
     

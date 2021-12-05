@@ -7,12 +7,14 @@
 
 import UIKit
 
+
 class CollectionViewCell: UICollectionViewCell {
   
     @IBOutlet var imageCategory: UIImageView!
     
     @IBOutlet var categoryName: UILabel!
      
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,8 +36,8 @@ class CollectionViewCell: UICollectionViewCell {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.imageCategory.bounds
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        self.imageCategory.layer.addSublayer(gradientLayer)
         
+        self.imageCategory.layer.addSublayer(gradientLayer)
         self.imageCategory.layer.masksToBounds = true
         self.imageCategory.layer.cornerRadius = self.imageCategory.frame.width / 12.0
     }
