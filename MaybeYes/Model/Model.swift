@@ -27,28 +27,22 @@ struct QuizBrain {
     var lostScore = 0
     var timeToRefresh: Bool?
     
-    /*
-     let quiz = [
-         Question(question: "Ёлка", yes: "True", no: "False"),
-         Question(question: "Гирлянда", yes: "True", no: "False"),
-         Question(question: "Шар", yes: "True", no: "False"),
-         Question(question: "Праздник", yes: "True", no: "False"),
-         Question(question: "Мороз", yes: "True", no: "False"),
-         Question(question: "Снегурочка", yes: "True", no: "False"),
-         Question(question: "Олень", yes: "True", no: "False"),
-         Question(question: "Санки", yes: "True", no: "False"),
-         Question(question: "Снег", yes: "True", no: "False"),
-         Question(question: "Снежинка", yes: "True", no: "False"),
-         Question(question: "Подарок", yes: "True", no: "False"),
-         Question(question: "Снеговик", yes: "True", no: "False")
-     ]
-     */
     
     let quiz = [
         Question(question: "Ёлка", yes: "True", no: "False"),
-        Question(question: "Гирлянда", yes: "True", no: "False") 
+        Question(question: "Гирлянда", yes: "True", no: "False"),
+        Question(question: "Шар", yes: "True", no: "False"),
+        Question(question: "Праздник", yes: "True", no: "False"),
+        Question(question: "Мороз", yes: "True", no: "False"),
+        Question(question: "Снегурочка", yes: "True", no: "False"),
+        Question(question: "Олень", yes: "True", no: "False"),
+        Question(question: "Санки", yes: "True", no: "False"),
+        Question(question: "Снег", yes: "True", no: "False"),
+        Question(question: "Снежинка", yes: "True", no: "False"),
+        Question(question: "Подарок", yes: "True", no: "False"),
+        Question(question: "Снеговик", yes: "True", no: "False")
     ]
-     
+    
     func getQuestionText() -> String {
         return quiz[questionNumber].text
     }
@@ -56,7 +50,7 @@ struct QuizBrain {
     func getProgress() -> Float {
         print("\(Float(questionNumber) / Float(quiz.count))")
         
-        return Float(quiz.count) //Float(questionNumber) / Float(quiz.count)
+        return Float(questionNumber) / Float(quiz.count)
     }
       
     mutating func getScore() -> Int {
