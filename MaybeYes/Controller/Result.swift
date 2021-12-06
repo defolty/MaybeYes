@@ -25,6 +25,7 @@ class Result: UIViewController {
     let gameVC = Game()
     let quizbrain = QuizBrain()
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,12 +42,24 @@ class Result: UIViewController {
         goToChangeGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         goToChangeGame.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
-        Haptics.impact(.light)
+        Haptics.impact(.light) 
         present(goToChangeGame, animated: true)
     }
     
     @IBAction func gameAgain(_ sender: UIButton) {
+        /*
+         здесь нужно добавить возможность начать игру занаво
+         предварительно сохранив выбор игрока через бд
+         */
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let goToChangeGame = storyboard.instantiateViewController(withIdentifier: "ChangeGameID") as! ChangeGame
         
+        /// строка для перехода на следующие экран без модального вида
+        goToChangeGame.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        goToChangeGame.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        
+        Haptics.impact(.light)
+        present(goToChangeGame, animated: true)
     }
      
     func boom() {
